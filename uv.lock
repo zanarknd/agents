@@ -19,7 +19,9 @@ name = "agents"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "httpx" },
     { name = "pydantic-ai" },
+    { name = "pydantic-settings" },
 ]
 
 [package.dev-dependencies]
@@ -28,7 +30,11 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "pydantic-ai", specifier = ">=1.0.6" }]
+requires-dist = [
+    { name = "httpx", specifier = ">=0.28.1" },
+    { name = "pydantic-ai", specifier = ">=1.0.6" },
+    { name = "pydantic-settings", specifier = ">=2.10.1" },
+]
 
 [package.metadata.requires-dev]
 dev = [{ name = "ruff", specifier = ">=0.13.0" }]
