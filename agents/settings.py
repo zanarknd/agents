@@ -12,6 +12,7 @@ class ClientsSettings(BaseModel):
 
 class Settings(BaseSettings):
     clients: ClientsSettings
+    user_agent: str
 
     model_config = SettingsConfigDict(
         env_prefix="APP_",
@@ -19,6 +20,7 @@ class Settings(BaseSettings):
     )
 
 
+settings = Settings()
+
 if __name__ == "__main__":
-    settings = Settings()
-    print(settings.clients.ipapi)
+    print(settings)
